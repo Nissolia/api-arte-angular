@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+declare var $: any;
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet],
@@ -9,4 +10,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'api-arte';
-}
+
+  ngOnInit(): void {
+     $('[data-bs-toggle="popover"]').popover();
+  }
+  }
