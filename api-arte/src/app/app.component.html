@@ -1,0 +1,29 @@
+<div class="container mt-2">
+    <div class="row ">
+       
+        
+        <ul class="nav justify-content-center">
+          <figure class="figure-img">
+              <img class="img-fluid" src="logo.png" alt="">
+          </figure>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Mapa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Acerca de...</a>
+        </li>
+      </ul>
+    </div>
+
+    <h1>Obras de Arte</h1>
+<ul>
+  <li *NgFor="let artwork of artworks">
+    <strong>{{ artwork.title }}</strong> - {{ artwork.artist_display }} ({{ artwork.date_display }})
+  </li>
+</ul>

@@ -1,2 +1,58 @@
-/* You can add global styles to this file, and also import other style files */
-@use 'app/styles';
+@use 'sass:color';
+
+// Define variables personalizadas antes de importar Bootstrap
+$primary: #34623F; 
+$secondary: #B39C4D;
+$gray-600: #b4a67b;
+$dark: #595c4b;
+$light: #ffff;
+
+// Configuración de Bootstrap con variables personalizadas
+@use "../node_modules/bootstrap/scss/bootstrap" with (
+  $primary: $primary,
+  $secondary: $secondary,
+  $gray-600: $gray-600,
+  $dark: $dark,
+  $light: $light
+);
+
+// Cards
+$card-border-color: transparent;
+
+// Tipografías
+$display-font-weight: 900;
+$heading-font-weight: 700;
+
+$nav-link-color: $secondary;
+$nav-link-hover-color: color.scale($secondary, $lightness: -40%);
+
+// Colores de texto
+.text {
+  &-p { color: $primary; }
+  &-s { color: $secondary; }
+  &-g { color: $gray-600; }
+  &-d { color: $dark; }
+  &-l { color: $light; }
+}
+
+// Colores de fondo
+.bg {
+  &-p { background-color: $primary; }
+  &-s { background-color: $secondary; }
+  &-g { background-color: $gray-600; }
+  &-d { background-color: $dark; }
+  &-l { background-color: $light; }
+}
+
+.btn {
+  background-color: $primary;
+  border: $primary;
+}
+
+.btn:hover {
+  background-color: color.scale($primary, $lightness: -40%);
+}
+
+.figure-img {
+  width: 5rem;
+}
